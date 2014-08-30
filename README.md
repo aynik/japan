@@ -42,7 +42,7 @@ $ jp [options] patch.json [...patches] < data.json
 ## Options
 
 <a name="pretty" />
-### japan --pretty | -p
+### jp --pretty | -p
 
 Pretty prints resulting data JSON.
 
