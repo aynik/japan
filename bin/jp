@@ -1,0 +1,23 @@
+#!/usr/bin/env node
+var fs = require('fs');
+var path = require('path');
+
+var program = require('commander')
+  .version(require('../package').version)
+  .usage('[options] patch.json [..patches]')
+  .option('-p, --pretty', 'pretty print JSON output') 
+  .parse(process.argv);
+
+var buffs = [];
+process.stdin.resume();
+process.stdin.on('data', function(buff){
+    buffs.push(buff);
+});
+process.stdin.on('end', function(buff){
+    if (buff) buffs.push(buff);
+    var patched = program.args.reduce(function(data, src){
+        return require('..').patch(data, require(path.resolve('./', src))); 
+    }, JSON.parse(Buffer.concat(buffs).toString('utf-8')))
+    console.log(program.pretty ? JSON.stringify(patched, null, 4) : JSON.stringify(patched));
+});
+

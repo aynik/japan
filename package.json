@@ -1,0 +1,29 @@
+{
+    "name": "japan",
+    "description": "JSON patcher",
+    "keywords": [
+        "json",
+        "patcher",
+        "patch",
+        "patcheable"
+    ],
+    "author": "aynik",
+    "version": "0.0.1",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/aynik/japan.git"
+    },
+    "bugs": {
+        "url": "https://github.com/aynik/japan/issues"
+    },
+    "bin": "./bin/jp",
+    "dependencies": {
+        "commander": ">=2.3.0"
+    },
+    "devDependencies": {
+        "tape": ">=2.13.4"
+    },
+    "scripts": {
+        "test": "tape test/*"
+    }
+}
