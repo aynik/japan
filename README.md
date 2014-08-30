@@ -111,7 +111,7 @@ console.log(JSON.stringify(data)); // '{"a":{"b":2}}'
 
 ---
 
-## Exmaples
+## Examples
 
 <a name="serial" />
 ### Serial patching
